@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * By Aman Singh
+ * Created By Aman Singh
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         game_image8 = findViewById(R.id.game_image_8);
         game_image9 = findViewById(R.id.game_image_9);
         reset_button =findViewById(R.id.reset_button);
-
     }
      //player Representation
     // 0 is cross
@@ -96,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
               String winnerStr;
               gameActive = false;
               if(gameState[winPosition[0]] == 0) {
-                  winnerStr = "X has won";
+                  winnerStr = "Winner is X";
               }else{
-                  winnerStr = "O has won";
+                  winnerStr = "Winner is O";
               }
-              ViewDialog();
+              ViewDialog(winnerStr);
            }
        }
 
@@ -126,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         status.setText("X's Turn");
     }
 
-    public void ViewDialog() {
+    public void ViewDialog(String winnerStr) {
 
         Dialog dialogUpdate = new Dialog(MainActivity.this);
         dialogUpdate.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -134,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         dialogUpdate.setCanceledOnTouchOutside(false);
 
         TextView dialogTextView = (TextView)  dialogUpdate.findViewById(R.id.winner_status_tv);
+        dialogTextView.setText(winnerStr);
         Button sucessButton = (Button) dialogUpdate.findViewById(R.id.continue_button);
         sucessButton.setEnabled(true);
 
@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialogUpdate.dismiss();
+                gameReset(view);
             }
         });
 
@@ -153,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         Window window = dialogUpdate.getWindow();
         window.setLayout(width, ActionBar.LayoutParams.WRAP_CONTENT);
         window.setBackgroundDrawableResource(android.R.color.transparent);
-
     }
 
 

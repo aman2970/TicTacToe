@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 /**
- * By Aman Singh
+ * Created By Aman Singh
  */
 public class SplashScreenActivity extends AppCompatActivity {
 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fifteen"
+    app:cardCornerRadius="@dimen/ten"
+    app:cardElevation="@dimen/ten"
+    android:backgroundTint="@color/yellow"
+   >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/winner_status_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text=""
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/ten"
+            android:textSize="@dimen/thirty_five_sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/continue_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:textSize="@dimen/twenty"
+            android:text="RESTART"
+            android:paddingStart="@dimen/twenty"
+            android:paddingEnd="@dimen/twenty"
+            android:paddingTop="@dimen/ten"
+            android:paddingBottom="@dimen/ten"
+            android:layout_marginTop="@dimen/twenty"
+            android:layout_marginBottom="@dimen/thirty"
+            android:textStyle="bold"
+            android:textColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/winner_status_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
